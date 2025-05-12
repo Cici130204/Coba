@@ -6,8 +6,8 @@
 ![alt text](https://github.com/Cici130204/Coba/blob/main/M_Forward%20Euler.png?raw=true)
 
 **Catatan:**  
-- `x0`: Titik awal x atau *(xₙ)*  
-- `xt`: Titik akhir x yang ingin dicapai atau *(xₙ₊₁)*  
+- `x0`: Titik awal x atau *(xₙ atau tₙ)*  
+- `xt`: Titik akhir x yang ingin dicapai atau *(xₙ₊₁ atau tₙ₊₁)*  
 - `h`: Ukuran langkah  
 
 **Tambahan:**  
