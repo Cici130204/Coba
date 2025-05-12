@@ -1,0 +1,29 @@
+@startuml
+start
+
+:Definisikan fungsi f(x, y) untuk metode RK4;
+:Set parameter x0, y0, xt, h;
+:jumlah iterasi n = int((xt - x0) / h);
+:Inisialisasi list: x_RK4 = [x0], y_RK4 = [y0];
+:Set x = x0 dan y = y0;
+
+split
+    while (for i to n:) 
+        :k1 = f(x, y)
+    k2 = f(x + h/2, y + h*k1/2)
+    k3 = f(x + h/2, y + h*k2/2)
+    k4 = f(x + h, y + h*k3);
+        :y = y + (h/6)*(k1 + 2*k2 + 2*k3 + k4);
+        :x = x + h;
+        :Simpan x dan y ke x_RK4, y_RK4;
+    endwhile
+split again
+    :Definisikan fungsi f_odeint(x, y) untuk solusi eksak;
+    :ts = np.linspace(x0, xt, n + 1);
+    :hasil_odeint = odeint(f_odeint, y0, ts);
+    :y_eksak = hasil_odeint[-1][0];
+endsplit
+
+:Output hasil y RK4 dan eksak;
+stop
+@enduml 
