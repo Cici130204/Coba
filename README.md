@@ -1,63 +1,27 @@
-# KN-M7
+# KN-M9_Ordinary Differential Equation (ODE)
 
-![1](https://user-images.githubusercontent.com/86104516/236393692-699638ea-8456-47cc-befd-75a91c4dfa8c.png)
+## Metode Forward Euler
+![alt text](https://github.com/Cici130204/Coba/blob/main/grafik%20ode.jpg?raw=true)
+![alt text](https://github.com/Cici130204/Coba/blob/main/Euler_rms.jpg?raw=true)
+![alt text](https://github.com/Cici130204/Coba/blob/main/M_Forward%20Euler.png?raw=true)
 
-![3](https://user-images.githubusercontent.com/86104516/236393995-95ec1f72-843a-4769-8fe6-b5c01ad20237.png)
+**Catatan:**  
+- `x0`: Titik awal x atau *(xₙ)*  
+- `xt`: Titik akhir x yang ingin dicapai atau *(xₙ₊₁)*  
+- `h`: Ukuran langkah  
 
-## Metode Trapesium
+**Tambahan:**  
+Untuk menampilkan hasil proses iterasi `y_eksak`, ikuti langkah berikut:
 
-```mermaid
-graph TD;
-    A([Mulai])-->B[/Input a, b, n/];
-    B-->C("Definisi f(x)<br>h = (b-a)/n<br>I = f(a)+f(b)");
-    C-->D{{for i = 1 to n-1, do}};
-    D-->E("j = a+(i*h)<br>I += 2*f(j)");
-    E-->D;
-    D-->F(I *= h/2);
-    F-->G([Tampil I]);
-    G-->I([Selesai]);
-```
+1. Ganti kode:
+   ```python
+   y_eksak = hasil_odeint[-1][0] menjadi y_eksak = hasil_odeint.flatten()
 
-![2](https://user-images.githubusercontent.com/86104516/236393718-66e9d7b1-49b9-4401-a61e-8f5ff52fa97a.png)
 
-## Metode 1/3 Simpson
+## Metode Runge Kutta Orde 4
+![alt text](https://github.com/Cici130204/Coba/blob/main/RK4_rms.jpg?raw=true)
+![alt text](https://github.com/Cici130204/Coba/blob/main/M_Runge%20Kutta%20Orde%204.png?raw=true)
 
-```mermaid
-graph TD;
-    A([Mulai])-->B[/Input a, b, n/];
-    B-->C("Definisi f(x)<br>h = (b-a)/n<br>I = f(a)+f(b");
-    C-->D{{for i = 1 to n-1, do}};
-    D-->E("j = a+(i*h)");
-    E-->F{if i mod 2 = 0};
-    F--Y-->G("I += 2*f(j)");
-    F--N-->H("I += 4*f(j)");
-    G-->D;
-    H-->D;
-    D-->I(I *= h/3);
-    I-->J([Tampil I]);
-    J-->K([Selesai]);
-```
 
-![4](https://user-images.githubusercontent.com/86104516/236393973-9d434b5e-485b-450c-8eb5-66b857df55c9.png)
 
-## Metode 3/8 Simpson
-
-```mermaid
-graph TD;
-    A([Mulai])-->B[/Input a, b, n/];
-    B-->C("Definisi f(x)<br>h = (b-a)/n<br>I = f(a)+f(b");
-    C-->D{{for i = 1 to n-1, do}};
-    D-->E("j = a+(i*h)");
-    E-->F{if i mod 3 = 0};
-    F--Y-->G("I += 2*f(j)");
-    F--N-->H("I += 3*f(j)");
-    G-->D;
-    H-->D;
-    D-->I("I *= (3/8)*h");
-    I-->J([Tampil I]);
-    J-->K([Selesai]);
-```
-
-## Integral Data Implisit
-
-![5](https://user-images.githubusercontent.com/86104516/236725067-5ab3d7c2-6b92-4700-8460-a27521236a48.png)
+  
