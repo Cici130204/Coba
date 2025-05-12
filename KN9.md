@@ -18,7 +18,7 @@ Untuk menampilkan hasil proses iterasi `y_eksak`, ikuti langkah berikut:
    y_eksak = hasil_odeint[-1][0] menjadi y_eksak = hasil_odeint.flatten()
 
 
-## Metode Runge Kutta Orde 4
+## Metode Runge - Kutta Orde 4
 ![alt text](https://github.com/Cici130204/Coba/blob/main/RK4_rms.jpg?raw=true)
 ![alt text](https://github.com/Cici130204/Coba/blob/main/M_Runge%20Kutta%20Orde%204.png?raw=true)
 
