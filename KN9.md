@@ -11,9 +11,9 @@
 - `h`: Ukuran langkah  
 
 **Tambahan:**  
-Untuk menampilkan hasil proses iterasi `y_eksak`, ikuti langkah berikut:
+Untuk menampilkan hasil proses iterasi `y_eksak`,yaitu dengant:
 
-1. Ganti kode:
+Ganti kode:
    ```python
    y_eksak = hasil_odeint[-1][0] menjadi y_eksak = hasil_odeint.flatten()
 
